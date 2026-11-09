@@ -2,7 +2,7 @@
 
 namespace KayiwaRahim\Relworx\Webhooks;
 
-use Interminate\Http\Request;
+use Illuminate\Http\Request;
 
 class RelworxWebhookVerifier
 {
