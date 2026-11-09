@@ -31,6 +31,10 @@ jobs:
       - name: Constrain Testbench to the Laravel compatibility line
         run: composer require --dev "orchestra/testbench:${{ matrix.testbench }}" --no-update
       - name: Resolve dependencies
+        # Laravel 10 is advisory-flagged by Composer; keep this exception scoped
+        # to the legacy PHP 8.1 / Testbench 8 compatibility job only.
+        env:
+          COMPOSER_POLICY_ADVISORIES_BLOCK: '0'
         run: composer update --prefer-dist --no-interaction --no-progress
       - name: Run tests
         run: composer test
