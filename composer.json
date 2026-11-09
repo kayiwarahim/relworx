@@ -1,5 +1,5 @@
 {
-  "name": "kayiwarahim/laravel-relworx",
+  "name": "kayiwarahim/relworx",
   "description": "A Laravel package for integrating Relworx mobile money collections, disbursements and account transactions.",
   "type": "library",
   "license": "MIT",

@@ -13,7 +13,7 @@ A Laravel package for Relworx mobile money collections, disbursements, wallet ba
 ## Installation
 
 ```bash
-composer require kayiwarahim/laravel-relworx
+composer require kayiwarahim/relworx
 php artisan vendor:publish --tag=relworx-config
 ```
 
