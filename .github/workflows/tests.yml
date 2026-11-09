@@ -30,15 +30,12 @@ jobs:
         run: composer validate --no-check-publish
       - name: Constrain Testbench to the Laravel compatibility line
         run: composer require --dev "orchestra/testbench:${{ matrix.testbench }}" --no-update
-      - name: Resolve dependencies (PHP 8.1 legacy compatibility)
-        if: matrix.php == '8.1'
-        # Laravel 10 is advisory-flagged by Composer; scope this test-only exception
-        # to the legacy PHP 8.1 / Testbench 8 compatibility job.
+      - name: Resolve dependencies
+        # Composer currently blocks the Laravel versions required by several
+        # Testbench matrix lines due to advisories. This exception is limited
+        # to CI test dependency resolution; it does not change consumer installs.
         env:
           COMPOSER_POLICY_ADVISORIES_BLOCK: '0'
-        run: composer update --prefer-dist --no-interaction --no-progress
-      - name: Resolve dependencies
-        if: matrix.php != '8.1'
         run: composer update --prefer-dist --no-interaction --no-progress
       - name: Run tests
         run: composer test
