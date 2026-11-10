@@ -56,7 +56,7 @@ Keep credentials on the server. Never commit real keys to Git, expose them in fr
 Resolve the facade from your Laravel application:
 
 ```php
-use KayiwaRahim\\Relworx\\Facades\\Relworx;
+use KayiwaRahim\Relworx\Facades\Relworx;
 
 // Request a mobile-money collection.
 $collection = Relworx::collections()->request([
@@ -122,7 +122,7 @@ Do not disable signature verification in production. If you change the webhook p
 
 ## Error handling
 
-Failed HTTP responses and connection errors are represented by `KayiwaRahim\\Relworx\\Exceptions\\RelworxException`.
+Failed HTTP responses and connection errors are represented by `KayiwaRahim\Relworx\Exceptions\RelworxException`.
 
 Useful methods include:
 
