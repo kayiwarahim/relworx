@@ -9,11 +9,11 @@ For example, create `app/Listeners/HandleRelworxPaymentWebhook.php`:
 ```php
 <?php
 
-namespace App\\Listeners;
+namespace App\Listeners;
 
-use Illuminate\\Support\\Facades\\DB;
-use KayiwaRahim\\Relworx\\Events\\RelworxPaymentFailed;
-use KayiwaRahim\\Relworx\\Events\\RelworxPaymentSucceeded;
+use Illuminate\Support\Facades\DB;
+use KayiwaRahim\Relworx\Events\RelworxPaymentFailed;
+use KayiwaRahim\Relworx\Events\RelworxPaymentSucceeded;
 
 class HandleRelworxPaymentWebhook
 {
@@ -63,11 +63,11 @@ In applications using an event service provider, register the listener for both 
 
 ```php
 protected $listen = [
-    \\KayiwaRahim\\Relworx\\Events\\RelworxPaymentSucceeded::class => [
-        \\App\\Listeners\\HandleRelworxPaymentWebhook::class,
+    \KayiwaRahim\Relworx\Events\RelworxPaymentSucceeded::class => [
+        \App\Listeners\HandleRelworxPaymentWebhook::class,
     ],
-    \\KayiwaRahim\\Relworx\\Events\\RelworxPaymentFailed::class => [
-        \\App\\Listeners\\HandleRelworxPaymentWebhook::class,
+    \KayiwaRahim\Relworx\Events\RelworxPaymentFailed::class => [
+        \App\Listeners\HandleRelworxPaymentWebhook::class,
     ],
 ];
 ```
